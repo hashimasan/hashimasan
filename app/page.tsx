@@ -59,7 +59,7 @@ export default function Home() {
               {/* Social Links */}
               <div className={styles.socialLinks}>
                 <a
-                  href="https://x.com/i/flow/login?redirect_after_login=%2F5515Honobono"
+                  href="https://x.com/5515Honobono"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.link}
