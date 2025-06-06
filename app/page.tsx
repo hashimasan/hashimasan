@@ -16,9 +16,7 @@ export default function Home() {
         {/* ヘッダー: 名前 */}
         <header className={styles.header}>
           <h1 className={styles.title}>hashimasan</h1>
-          <p className={styles.subtitle}>
-            Web Developer & Administrative Scrivener
-          </p>
+          <p className={styles.subtitle}>Web Developer</p>
         </header>
 
         {/* メインコンテンツ */}
