@@ -7,6 +7,8 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
+import Image from "next/image";
+import profileImage from "./img/profile.jpg";
 import styles from "./page.module.css"; // CSSモジュールをインポート
 
 export default function Home() {
@@ -15,8 +17,21 @@ export default function Home() {
       <div className={styles.container}>
         {/* ヘッダー: 名前 */}
         <header className={styles.header}>
-          <h1 className={styles.title}>hashimasan</h1>
-          <p className={styles.subtitle}>Web Developer</p>
+          <Image
+            src={profileImage}
+            alt="橋本 真奈 Mana Hashimotoのプロフィール写真"
+            width={136}
+            height={136}
+            className={styles.profileImage}
+            priority
+          />
+          <div className={styles.identity}>
+            <h1 className={styles.title}>
+              橋本 真奈
+              <span className={styles.englishName}>Mana Hashimoto</span>
+            </h1>
+            <p className={styles.subtitle}>Web Developer</p>
+          </div>
         </header>
 
         {/* メインコンテンツ */}
@@ -33,7 +48,7 @@ export default function Home() {
                   <span key={skill} className={styles.skillTag}>
                     {skill}
                   </span>
-                )
+                ),
               )}
             </div>
           </section>
@@ -44,9 +59,59 @@ export default function Home() {
               <GraduationCap className={styles.icon} />
               Other
             </h2>
-            <p className={styles.otherText}>
-              行政書士資格あり (Administrative Scrivener License)
+            <h3 className={styles.subheading}>資格 / Certifications</h3>
+            <div className={styles.certificationList}>
+              <div className={styles.certificationItem}>
+                <h4>
+                  ウェブデザイン技能
+                  <br />
+                  検定2級
+                </h4>
+                <time dateTime="2019-12">2019.12</time>
+              </div>
+              <div className={styles.certificationItem}>
+                <h4>行政書士</h4>
+                <time dateTime="2021-02">2021.02</time>
+              </div>
+              <div className={styles.certificationItem}>
+                <h4>Java Silver</h4>
+                <time dateTime="2022-01">2022.01</time>
+              </div>
+              <div className={styles.certificationItem}>
+                <h4>基本情報技術者</h4>
+                <time dateTime="2024-07">2024.07</time>
+              </div>
+            </div>
+          </section>
+
+          {/* プロジェクト */}
+          <section>
+            <h2 className={styles.sectionTitle}>
+              <Briefcase className={styles.icon} />
+              Project
+            </h2>
+            <p className={styles.projectRoleText}>
+              要件定義、設計、実装、テスト、リリース、リーダー
+              <br />
+              Requirements Definition, Design, Implementation, Testing, Release,
+              Team Lead
             </p>
+            <ul className={styles.projectList}>
+              <li>受発注システム開発 (Order Management System Development)</li>
+              <li>コーポレートサイト構築 (Corporate Website Development)</li>
+              <li>
+                宅配ポータルアプリの管理サイト開発 (Delivery Portal App Admin
+                Site Development)
+              </li>
+              <li>AI研究開発 (AI Research and Development)</li>
+              <li>
+                在庫管理システム開発 (Inventory Management System Development)
+              </li>
+              <li>
+                メディカル系企業基幹システム開発 (Medical Corporate Core System
+                Development)
+              </li>
+            </ul>
           </section>
 
           {/* リンク */}
@@ -64,7 +129,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className={styles.link}
                 >
-                  <Twitter size={20} /> X (Twitter)
+                  <Twitter size={20} /> X
                 </a>
                 <a
                   href="https://www.instagram.com/hashimasan_design/#"
@@ -87,11 +152,11 @@ export default function Home() {
               {/* Divider */}
               <hr className={styles.divider} />
 
-              {/* Project Link */}
+              {/* Application Link */}
               <div>
                 <h3 className={styles.projectTitle}>
                   <Briefcase size={20} className={styles.projectIcon} />
-                  Project
+                  Application
                 </h3>
                 <a
                   href="https://gen-exercise.vercel.app/"
