@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css"; // globals.cssも作成します
 
 export const metadata: Metadata = {
-  title: "Simple Vercel App",
+  title: "Mana Hashimoto - Profile",
   description: "A very simple app to display text on Vercel.",
 };
 
